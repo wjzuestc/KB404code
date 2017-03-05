@@ -15,14 +15,14 @@ fdc=1000*Kr;
 fdt=Kr*5000;
 fdtt=Kr*10000;
 %%
-% St=exp(cj*pi*Kr*t.^2);
+St=exp(cj*pi*Kr*t.^2);
 St_OnePhase=exp(cj*pi*Kr*t.^2).*exp(cj*2*pi*fdc*t);
 St_ThreePhase=exp(cj*pi*Kr*t.^2).*exp(cj*2*pi*fdt*t.^3);
 St_fourPhase=exp(cj*pi*Kr*t.^2).*exp(cj*2*pi*fdtt*t.^4);
 % St_oneAndthreePhase=exp(cj*pi*Kr*t.^2).*exp(cj*2*pi*fdc*t).*exp(cj*2*pi*fdtt*t.^3);
 St_final=exp(cj*pi*Kr*t.^2).*exp(cj*2*pi*fdc*t).*exp(cj*2*pi*fdt*t.^3).*exp(cj*2*pi*fdtt*t.^4);
 %%
-% figure;plot(real(St));title('LFM');
+figure;plot(real(St));title('LFM');
 figure;plot(real(St_OnePhase));title('加一阶相');
 figure;plot(real(St_ThreePhase));title('加三阶相');
 figure;plot(real(St_fourPhase));title('加四阶相');
